@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelPlay Store</title>
+  <link rel="stylesheet" href="plataforma.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="PixelPlay Logo" class="logo-img" />
+    <nav>
+      <a href="#" class="nav-link active" id="nav-tienda">Tienda</a>
+      <a href="#" class="nav-link" id="nav-juegos">Tus Juegos</a>
+      <a href="#" class="nav-link">Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tienda-section">
+      <h2 class="section-title">Juegos Destacados</h2>
+      <div class="store-grid" id="store-grid"></div>
+    </section>
+
+    <section id="tus-juegos-section" class="hidden">
+      <h2 class="section-title">Tus Juegos</h2>
+      <div class="store-grid" id="library-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal compra -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">Comprar Juego</h2>
+      <p id="modal-price">Precio: <strong>$0.00</strong></p>
+      <label>Nombre en la compra:</label>
+      <input type="text" id="buyer-name" placeholder="Tu nombre..." />
+      <label>Método de pago:</label>
+      <select id="payment">
+        <option>Tarjeta de crédito</option>
+        <option>PayPal</option>
+        <option>Cripto (simulado)</option>
+      </select>
+      <div class="modal-buttons">
+        <button id="confirm-btn">Confirmar compra</button>
+        <button id="close-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje de compra -->
+  <div id="purchase-success" class="purchase-success hidden">
+    <h2>✅ ¡Compra completada!</h2>
+    <p>Tu juego se agregó a tu biblioteca.</p>
+  </div>
+
+  <footer>
+    <p>© 2025 PixelPlay Store — Proyecto educativo sin fines de lucro.</p>
+  </footer>
+
+  <script src="plataforma.js"></script>
+</body>
+</html>
