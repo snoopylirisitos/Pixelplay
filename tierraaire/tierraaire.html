@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra & Aire</title>
+    <link rel="stylesheet" href="menu_style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="menu-container">
+        <h1 id="game-title">TIERRA Y AIRE</h1>
+        
+        <div id="game-preview">
+            <p style="font-size: 8px; color: #7C3A27;">JUEGO COOPERATIVO</p>
+        </div>
+
+        <button id="play-button">JUGAR</button>
+        
+        <audio id="game-music" loop>
+            <source src="tierraaire.mp3" type="audio/mp3"> 
+        </audio>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script src="juego.js"></script>
+</body>
+</html>

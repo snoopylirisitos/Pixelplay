@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Space Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spacehero.css">
+</head>
+<body>
+
+    <div id="start-screen" class="menu screen hidden">
+        <h1 class="title">SPACE HERO</h1>
+        <p>¡Dispara a los asteroides y sobrevive al espacio!</p>
+        <button id="play-btn">JUGAR</button>
+    </div>
+
+    <div id="lose-screen" class="menu screen hidden result-screen">
+        <h2 class="result-title lose-text">GAME OVER</h2>
+        <p class="result-message">Tu nave fue destruida.</p>
+        <p>Tu puntaje: <span id="final-score">0</span></p>
+        <p class="enter-message">Presiona ENTER para reiniciar</p>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <audio id="bg-music" src="spacehero.mp3" loop preload="auto"></audio>
+    <audio id="crash-sound" src="crash.mp3" preload="auto"></audio>
+    <audio id="boost-sound" src="boost.mp3" preload="auto"></audio>
+    <audio id="shoot-sound" src="shoot.mp3" preload="auto"></audio>
+    <audio id="explosion-sound" src="explosion.mp3" preload="auto"></audio>
+
+    <script src="spacehero.js"></script>
+</body>
+</html>
