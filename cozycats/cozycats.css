@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    /* Paleta de Colores Pastel/Cozy */
+    --primary-pastel: #FFC0CB; /* Rosa Suave */
+    --accent-pastel: #AEE2FF; /* Azul Cielo */
+    --background-dark: #f0f0f0; /* Blanco roto */
+    --background-light: #ffffff;
+    --border-cozy: #FFDAB9; /* Melocotón Suave */
+    --text-color: #5d5d5d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-dark);
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Estilos de Menú de Inicio */
+.menu {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    z-index: 10;
+}
+
+.title-cozy {
+    font-size: 3rem;
+    color: var(--primary-pastel);
+    text-shadow: 2px 2px 0 var(--text-color);
+}
+
+#play-btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: 3px solid var(--primary-pastel);
+    border-radius: 8px;
+    background: var(--accent-pastel);
+    color: var(--text-color);
+    box-shadow: 0 5px 0 #89b7cd, 0 0 10px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: 0.1s;
+}
+#play-btn:active { 
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #89b7cd;
+}
+
+/* Contenedor del Juego */
+#game-container {
+    display: flex;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: var(--background-light);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Área de Juego Cuadrada */
+#game-area {
+    width: 60vh; 
+    height: 60vh;
+    min-width: 500px;
+    min-height: 500px;
+    
+    background-color: transparent; 
+    border: 5px solid var(--border-cozy);
+    border-radius: 15px;
+    
+    box-shadow: 0 0 10px var(--border-cozy);
+    
+    margin: auto;
+    overflow: hidden;
+    position: relative; 
+}
+
+#catCafeCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+}
+
+#background-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    z-index: 1; 
+}
+
+/* --- Panel Lateral --- */
+#sidebar {
+    width: 300px;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--text-color);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar h2, #sidebar h3 {
+    font-size: 0.9rem;
+    color: var(--primary-pastel);
+    text-shadow: 1px 1px 0 #fff;
+    margin: 5px 0;
+}
+
+/* Implementación del Scroll en el Inventario */
+#inventory-scroll {
+    max-height: 40vh; /* Limitar la altura */
+    overflow-y: auto; /* Habilitar scroll vertical */
+    padding-right: 15px; /* Espacio para la barra de scroll */
+}
+
+#inventory, #background-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Estilo de los botones de inventario/fondo */
+.item-btn, .bg-btn {
+    width: 80px;
+    height: 80px;
+    background-color: var(--background-light);
+    border: 2px solid var(--accent-pastel);
+    border-radius: 5px;
+    box-shadow: 0 3px 0 var(--primary-pastel);
+    cursor: pointer;
+    font-size: 0.6rem;
+    line-height: 1.2;
+    padding: 5px;
+    transition: 0.1s;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: center;
+}
+
+.item-btn:hover, .bg-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 var(--primary-pastel);
+}
+
+.item-btn.selected {
+    border-color: var(--primary-pastel); 
+    box-shadow: 0 0 10px var(--primary-pastel);
+}
+
+.item-btn::after {
+    content: attr(data-cost);
+    position: absolute;
+    bottom: 2px;
+    color: var(--text-color);
+    font-size: 0.5rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+}

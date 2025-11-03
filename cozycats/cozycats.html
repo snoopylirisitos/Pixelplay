@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CozyCats - Decoración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cozycats.css">
+</head>
+<body>
+    
+    <div id="start-screen" class="menu screen">
+        <h1 class="title-cozy">COZYCATS</h1>
+        <p>Decora la casa de tus adorables gatos.</p>
+        <button id="play-btn">COMENZAR A DECORAR</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        
+        <div id="sidebar">
+            <h2>💰 Monedas: <span id="coins">430</span></h2>
+            
+            <hr>
+            
+            <h3>🎨 Fondos</h3>
+            <div id="background-selection">
+                </div>
+            
+            <hr>
+
+            <h3>📦 Inventario</h3>
+            <div id="inventory-scroll"> 
+                <div id="inventory">
+                    </div>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div id="background-display"></div> 
+            <canvas id="catCafeCanvas"></canvas>
+        </div>
+
+    </div>
+
+    <audio id="bg-music" src="cozycats.mp3" loop preload="auto"></audio>
+    <audio id="select-sound" src="select_item.mp3" preload="auto"></audio> 
+    <script src="cozycats.js"></script>
+</body>
+</html>
