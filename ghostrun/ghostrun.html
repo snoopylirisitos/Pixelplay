@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Run</title>
+    <link rel="stylesheet" href="ghostrun.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="menu-screen" class="screen active-screen">
+        <h1 class="neon-text">G H O S T R U N</h1>
+        <img src="ghost.png" alt="Ghost Logo" class="menu-ghost">
+        <button id="startButton" class="neon-button">JUGAR</button>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="game-container">
+            <div id="time-bar-container">
+                <div id="time-bar"></div>
+            </div>
+
+            <img id="player" src="personajeghostrun2.png" alt="Corredor Fantasma">
+
+            </div>
+    </div>
+
+    <div id="win-screen" class="screen result-screen">
+        <h2 class="neon-text win-text">¡GANASTE!</h2>
+        <p>¡Sobreviviste 60 segundos!</p>
+        <p class="press-enter">Presiona ENTER para volver a jugar</p>
+    </div>
+
+    <div id="lose-screen" class="screen result-screen">
+        <h2 class="neon-text lose-text">GAME OVER</h2>
+        <p>¡El fantasma te atrapó!</p>
+        <p class="press-enter">Presiona ENTER para volver a jugar</p>
+    </div>
+
+    <audio id="lose-sound" src="ghost.mp3" preload="auto"></audio>
+    <audio id="background-music" src="ghostrun.mp3" loop preload="auto"></audio>
+
+    <script src="ghostrun.js"></script>
+</body>
+</html>

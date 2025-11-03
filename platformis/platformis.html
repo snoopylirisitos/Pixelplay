@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Platformis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen" class="menu screen active-screen">
+        <h1 class="title">PLATFORMIS</h1>
+        <button id="play-btn">JUGAR</button>
+    </div>
+
+    <div id="character-select" class="menu screen hidden">
+        <h2>Elige tu personaje</h2>
+        <div class="characters">
+            <img src="img/player1.png" alt="Personaje 1" data-id="1">
+            <img src="img/player2.png" alt="Personaje 2" data-id="2">
+            <img src="img/player3.png" alt="Personaje 3" data-id="3">
+            <img src="img/player4.png" alt="Personaje 4" data-id="4">
+        </div>
+    </div>
+
+    <div id="win-screen" class="menu screen hidden result-screen">
+        <h2 class="result-title win-text">¡GANASTE!</h2>
+        <p class="result-message">Completaste el nivel</p>
+        <p class="enter-message">Presiona ENTER para jugar otra vez</p>
+    </div>
+
+    <div id="lose-screen" class="menu screen hidden result-screen">
+        <h2 class="result-title lose-text">GAME OVER</h2>
+        <p class="result-message" id="lose-msg">Te caíste!</p>
+        <p class="enter-message">Presiona ENTER para reiniciar</p>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <audio id="bg-music" src="platformis.mp3" loop preload="auto"></audio>
+    <audio id="win-sound" src="platformiswin.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="platformislose.mp3" preload="auto"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
